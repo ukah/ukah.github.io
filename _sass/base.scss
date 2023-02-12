@@ -25,11 +25,12 @@ body {
 
 @keyframes slidein {
   0% {
-    flex: 0 0 0;
+    // flex: 0 0 0;
     
   }
   70%{
     opacity: 0.1;
+    flex: 1 0 0;
   }
   100% {
     flex: 1 0 0;
@@ -37,11 +38,11 @@ body {
   }
 }
 
-// .nav {
-//   animation-name: slidein;
-//   animation-duration: 3s;
-//   animation-fill-mode: forwards;
-// }
+.nav {
+  flex: 0 0 0;
+  opacity: 0;
+  width:0;
+}
 
 .dvh-100{
   height: 100dvh;
