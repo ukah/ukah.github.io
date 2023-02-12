@@ -7,24 +7,36 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Happy Jekylling! - site title</title>
+    <title>ukah - site title</title>
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
     <main>
         <div class="container-fluid">
-            <div class="row row-cols-3 vh-100 d-flex align-items-center">
-                <div class="col-sm-4"></div>
-                <div class="my-5 col col-sm-4 text-center">
+            <div class="row vh-100 d-flex align-items-center">
+                <div class="col"></div>
+                <div class="col text-center">
                     <figure class="myface">
                         <img src="https://ukah.github.io/old_mygithubpages_top/ukah.png" alt="">
                     </figure>
                 </div>
-                <div class="col-sm-4"></div>
+                <div style="flex: 0 0 0;opacity: 0;" class="nav">
+                  <h1>やあ</h1>
+                </div>
+                <div class="col"></div>
             </div>
         </div>
     </main>
 
+    <script>
+      const img = document.querySelector('img');
+      const nav = document.querySelector('.nav');
+      img.addEventListener('click', event => {
+        nav.style.animationName = "slidein";
+        nav.style.animationDuration = "3s";
+        nav.style.animationFillMode = "forwards";
+      })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

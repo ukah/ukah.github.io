@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   background: #ffffff;
   color: #000000;
@@ -19,4 +18,15 @@ body {
   box-shadow: 0 0 8px blue;
 }
 
-/*# sourceMappingURL=main.css.map */
+@keyframes slidein {
+  0% {
+    flex: 0 0 0;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  100% {
+    flex: 1 0 0;
+    opacity: 1;
+  }
+}
