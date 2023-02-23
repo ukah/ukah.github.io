@@ -9,47 +9,108 @@
 
     <title>ukah - ポートフォリオ</title>
     <link rel="stylesheet" href="assets/css/main.css">
-  </head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJW2J05RKX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YJW2J05RKX');
+</script>
+
+</head>
   <body>
     <main>
         <div class="container">
             <div class="row dvh-100 d-flex align-items-center">
-                <div class="col text-center">
+                <div class="col text-center leftbox">
                     <figure class="myface">
                         <img src="https://ukah.github.io/old_mygithubpages_top/ukah.png" alt="">
                     </figure>
                   </div>
-                <div class="nav">
-                  <h1>やあ</h1>
-                </div>
+                <div class="menuList">
+                  <h1 class="my-4">やあ</h1>
+                  <p class="lead">
+                    物書き、歌、動画作成、プログラミング、ギター<br>
+                    いろんなことやって生きてます
+                  </p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item fs-5">配信所</li>
+                    <li class="list-group-item">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="https://www.twitch.tv/ukah">Twitch : ukah</a></li>
+                        <li class="list-group-item"><a href="https://com.nicovideo.jp/community/co347796">ニコ生</a></li>
+                        <li class="list-group-item"><a href="https://twitcasting.tv/ukah_exe">ツイキャス</a></li>
+                        <li class="list-group-item">Mirrativ</li>
+                      </ul>
+                    </li>
+                    <li class="list-group-item fs-5">つくったりしたもの</li>
+                    <li class="list-group-item">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="https://www.nicovideo.jp/mylist/11687248">歌ってみた動画マイリスト：ニコニコ動画</a></li>
+                        <li class="list-group-item"><a href="https://www.nicovideo.jp/mylist/19868932">手伝った動画マイリスト：ニコニコ動画</a></li>
+                        <li class="list-group-item"><a href="https://www.nicovideo.jp/mylist/12956244">ゲーム実況動画マイリスト：ニコニコ動画</a></li>
+                        <li class="list-group-item"><a href="https://game.nicovideo.jp/atsumaru/users/3471145">作ったゲームアツマール：ニコニコ動画</a></li>
+                        <li class="list-group-item"><a href="https://soundcloud.com/yumemineko">Sound Cloud</a></li>
+                        <li class="list-group-item"><a href="https://www.youtube.com/channel/UCto0urgRczDDfEyy7WB5zEw">ukah ch. 夢見猫うかあ : YouTube</a></li>
+                        <li class="list-group-item"><a href="https://github.com/ukah">GitHub</a></li>
+                      </ul>
+                    </li>
+                    <li class="list-group-item fs-5">書き物</li>
+                    <li class="list-group-item">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="https://twitter.com/ukah_exe">Twitter</a></li>
+                        <li class="list-group-item"><a href="https://mstdn.jp/@ukah">マストドン(mstdn.jp)</a></li>
+                        <li class="list-group-item"><a href="https://note.com/ukah">Note</a></li>
+                        <li class="list-group-item"><a href="https://qiita.com/ukah">Qiita</a></li>
+                        <li class="list-group-item"><a href="https://zenn.dev/ukah">Zenn</a></li>
+                      </ul>
+                    </li>
+                  </ul><!-- list -->
+                  <hr>
+                  <P class="my-4 text-center">© ukah</P>
+                </div><!-- ./menuList -->
             </div>
         </div>
     </main>
 
-    <script>
+<script>
+const leftbox = document.querySelector('.leftbox');
+const nav = document.querySelector('.menuList');
 document.querySelector(".myface").addEventListener('click', function(e){
   const isActive = 'isActive'
-  const nav = document.querySelector('.nav');
   if(nav.classList.contains(isActive)){
     nav.classList.remove(isActive);
+    setTimeout(() => {leftbox.style.flex = "1 0 0"}, 500)
     localStorage.setItem("menu","false")
   } else {
     nav.classList.add(isActive);
+    setTimeout(() => {leftbox.style.flex = "0.5 0 0"}, 500)
     localStorage.setItem("menu","true")
   }
   console.log("Menu property is " + localStorage.getItem('menu'));
 })
 //読み込み時動作
 window.addEventListener('load', (event) => {
+  const nav = document.querySelector('.menuList');
   if(localStorage.getItem("menu") == "true"){
-    const nav = document.querySelector('.nav');
     nav.classList.add('isActive');
 
     const Active = document.querySelector('.isActive');
     Active.style.transition = "all 0.1s";
-    // Active.style.transition = null;
     setTimeout(() => {Active.style.transition = null}, 1000);
+    leftbox.style.transition = "all 0.1s";
+    setTimeout(() => {leftbox.style.transition = null}, 1000);
+
+    leftbox.style.flex = "0.5 0 0";
+  } else {
+    //if menu == false
+    setTimeout(() => {leftbox.style.flex = "0.5 0 0";}, 2000)
+    setTimeout(() => {nav.classList.add('isActive')}, 2000);
+    localStorage.setItem("menu","true")
   }
+  console.log("Menu property is " + localStorage.getItem('menu'));
 })  
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
